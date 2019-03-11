@@ -3,11 +3,13 @@ os:
   - linux-ppc64le
 sudo: required
 
-language: go
-
-go:
-- 1.9.4
-
+before_install:
+  - sudo apt-get update
+  - wget https://dl.google.com/go/go1.9.4.linux-ppc64le.tar.gz
+  - sudo tar -xvf go1.11.4.linux-amd64.tar.gz
+  - sudo mv go /usr/local
+  - export GOROOT=/usr/local/go
+  
 script:
   - export GOPATH=/source/kiali/kiali
   - sudo mkdir -p $GOPATH
