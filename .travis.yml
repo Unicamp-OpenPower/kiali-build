@@ -1,6 +1,12 @@
+dist: xenial
 os:  
   - linux-ppc64le
 sudo: required
+
+language: go
+
+go:
+- 1.9.4
 
 script:
   - export GOPATH=/source/kiali/kiali
