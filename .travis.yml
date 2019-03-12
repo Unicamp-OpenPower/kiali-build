@@ -6,8 +6,6 @@ sudo: required
 language: go
 go:
 - "1.9.4"
-
-before_install:
   
 install:
   - cd $GOPATH/src/github.com
