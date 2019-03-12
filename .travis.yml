@@ -5,19 +5,18 @@ sudo: required
 
 language: go
 go:
-- 1.9.4
+- "1.9.4"
 
 before_install:
   
-script:
-  - export GOPATH=/source/kiali/kiali
-  - sudo mkdir -p $GOPATH
-  - cd $GOPATH
-  - sudo mkdir -p src/github.com/kiali
-  - cd src/github.com/kiali
-  - sudo git clone https://github.com/kiali/kiali.git
-  - export PATH=${PATH}:${GOPATH}/bin
-  - cd ${GOPATH}/src/github.com/kiali/kiali
+install:
+  - cd $GOPATH/src/github.com
+  - mkdir kiali
+  - cd kiali
+  - git clone https://github.com/kiali/kiali.git
+  - cd kiali
   - sudo make dep-install
   - sudo make build
+  
+  script:
   - sudo make test
