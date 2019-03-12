@@ -7,16 +7,17 @@ before_install:
   - sudo apt-get update
   - sudo wget https://dl.google.com/go/go1.9.4.linux-ppc64le.tar.gz
   - sudo tar -C /usr/local -xzf go1.9.4.linux-ppc64le.tar.gz
-  - sudo export PATH=$PATH:/usr/local/go/bin
+  - export PATH=$PATH:/usr/local/go/bin
+  - cd /usr/local/go/bin
   
 script:
-  - sudo export GOPATH=/source/kiali/kiali
+  - export GOPATH=/source/kiali/kiali
   - sudo mkdir -p $GOPATH
   - cd $GOPATH
   - sudo mkdir -p src/github.com/kiali
   - cd src/github.com/kiali
   - sudo git clone https://github.com/kiali/kiali.git
-  - sudo export PATH=${PATH}:${GOPATH}/bin
+  - export PATH=${PATH}:${GOPATH}/bin
   - cd ${GOPATH}/src/github.com/kiali/kiali
   - sudo make dep-install
   - sudo make build
