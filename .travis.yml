@@ -18,11 +18,7 @@ script:
   - sudo git clone https://github.com/kiali/kiali.git
   - export PATH=${PATH}:${GOPATH}/bin
   - cd ${GOPATH}/src/github.com/kiali/kiali
-  - sudo make dep-install
-  - cd ${GOPATH}/src/github.com/kiali/kiali
-  - sudo make dep-update
-  - cd ${GOPATH}/src/github.com/kiali/kiali
-  - sudo make build
-  - cd ${GOPATH}/src/github.com/kiali/kiali
-  - sudo make test
+  - make dep-install
+  - make build
+  - make test
 
