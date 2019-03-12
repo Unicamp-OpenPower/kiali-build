@@ -5,7 +5,7 @@ sudo: required
 
 language: go
 go:
-- "1.9.4"
+  - "1.9.4"
   
 install:
   - cd $GOPATH/src/github.com
