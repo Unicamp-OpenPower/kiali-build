@@ -18,9 +18,8 @@ script:
   - mkdir kiali
   - cd kiali
   - git clone https://github.com/kiali/kiali.git
-  - cd kiali  
-  - export GOBIN=$GOPATH/bin
-
-  - sudo make dep-install
+  - cd kiali    
+  - chmod 777 dep-install
+  - make dep-install
   - sudo make build
   - sudo make test
