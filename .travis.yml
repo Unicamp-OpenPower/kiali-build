@@ -10,7 +10,9 @@ before_install:
   - export PATH=$PATH:/usr/local/go/bin
   
 script:
-  - cd $GOPATH/src/github.com
+  - cd $GOPATH/src
+  - mkdir github.com
+  - cd github.com
   - mkdir kiali
   - cd kiali
   - git clone https://github.com/kiali/kiali.git
