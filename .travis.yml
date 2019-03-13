@@ -19,7 +19,7 @@ script:
   - cd kiali
   - git clone https://github.com/kiali/kiali.git
   - cd kiali    
-  - chmod 777 dep-install
+  - sudo chmod 777 Makefile
   - make dep-install
-  - sudo make build
-  - sudo make test
+  - make build
+  - make test
