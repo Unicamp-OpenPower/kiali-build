@@ -11,6 +11,8 @@ before_install:
   
 script:
   - cd $GOPATH/src
+  - mkdir src
+  - cd src
   - mkdir github.com
   - cd github.com
   - mkdir kiali
