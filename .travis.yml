@@ -10,7 +10,7 @@ before_install:
   - export PATH=$PATH:/usr/local/go/bin
   
 script:
-  - cd $GOPATH/src
+  - cd $GOPATH
   - mkdir src
   - cd src
   - mkdir github.com
