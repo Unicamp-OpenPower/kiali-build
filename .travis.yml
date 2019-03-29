@@ -41,9 +41,10 @@ env:
 # decided to no longer commit vendor dependencies into the source tree.
 # See: https://github.com/golang/dep/blob/master/docs/FAQ.md#should-i-commit-my-vendor-directory
 install:   
+ - sudo apt install golang-glide
  - make swagger-install
  - make gometalinter-install
- - make dep-install
+ # make dep-install
  - make dep-update
 
 script:
