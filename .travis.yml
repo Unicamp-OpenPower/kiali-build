@@ -11,8 +11,7 @@ before_install:
   - wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/glide/glide-0.13.1
   - mv glide-0.13.1 glide
   - sudo chmod 755 glide
-  - ./glide
-  - mv glide /usr/local/bin/glide
+  - sudo mv glide /usr/local/bin/glide
   
 script:
   - cd $GOPATH
