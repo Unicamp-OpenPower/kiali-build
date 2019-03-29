@@ -8,6 +8,11 @@ before_install:
   - sudo wget https://dl.google.com/go/go1.9.4.linux-ppc64le.tar.gz
   - sudo tar -C /usr/local -xzf go1.9.4.linux-ppc64le.tar.gz
   - export PATH=$PATH:/usr/local/go/bin
+  - wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/glide/glide-0.13.1
+  - mv glide-0.13.1 glide
+  - sudo chmod 755 glide
+  - ./glide
+  - mv glide /usr/local/bin/glide
   
 script:
   - cd $GOPATH
