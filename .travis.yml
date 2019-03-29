@@ -4,7 +4,6 @@ os:
 sudo: required
 
 before_install:
-  - pwd
   - sudo apt-get update
   - sudo wget https://dl.google.com/go/go1.9.4.linux-ppc64le.tar.gz
   - sudo tar -C /usr/local -xzf go1.9.4.linux-ppc64le.tar.gz
@@ -24,6 +23,8 @@ script:
   - cd kiali
   - git clone https://github.com/kiali/kiali.git
   - cd kiali    
+  - rm MAKEFILE
+  - mv /home/travis/build/Unicamp-OpenPower/kiali-build/Makefile $GOPATH/src/github.com/kiali/Makefile
   - sudo chmod 777 Makefile
   - make dep-install
   - make build
