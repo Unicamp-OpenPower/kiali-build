@@ -23,7 +23,7 @@ script:
   - cd kiali
   - git clone https://github.com/kiali/kiali.git
   - cd kiali    
-  - rm MAKEFILE
+  - rm Makefile
   - mv /home/travis/build/Unicamp-OpenPower/kiali-build/Makefile $GOPATH/src/github.com/kiali/Makefile
   - sudo chmod 777 Makefile
   - make dep-install
