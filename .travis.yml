@@ -12,11 +12,7 @@ go:
 - 1.9.4
 
 before_script:
-  - cd $GOPATH
-  - mkdir src
-  - cd src
-  - mkdir github.com
-  - cd github.com
+  - cd $GOPATH/src/github.com
   - mkdir kiali
   - cd kiali
   - git clone https://github.com/kiali/kiali.git
