@@ -17,6 +17,9 @@ before_script:
   - cd kiali
   - git clone https://github.com/kiali/kiali.git
   - cd kiali 
+  - rm Makefile
+  - mv /home/travis/gopath/src/github.com/Unicamp-OpenPower/kiali-releases/Makefile $GOPATH/src/github.com/kiali/kiali/Makefile
+
  
 install:   
  - wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/glide/glide-0.13.1
