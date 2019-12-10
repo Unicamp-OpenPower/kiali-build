@@ -1,4 +1,5 @@
 sudo: required
+dist: xenial
 
 os: 
   - linux-ppc64le
@@ -22,11 +23,10 @@ before_script:
 
  
 install:   
- - wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/glide/glide-0.13.1
- - mv glide-0.13.1 glide
+ - wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/glide/glide-0.13.3
+ - mv glide-0.13.3 glide
  - sudo chmod 755 glide
  - sudo mv glide /usr/bin/glide
- - glide
 
 script:
   - make build
