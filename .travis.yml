@@ -28,4 +28,10 @@ install:
 script:
   - make build
   - make test
-  
+
+notifications:
+  slack:
+    rooms:
+      - secure: "aPEo+OioLm9K7560mNLUus7GFxl77CiOUnADo2JF/8WVv16bWvzHF1FgLlFvEGZsQSV860UfpIq2XagtXqnhEgvO5l/u6cytoX5fYtlHfEvppCzBOnj5wBhET7ViQeFdXzaqmMd6OEq/i4lQJ4+qCfMf4VZkwyJtxUMsE4UlWeQbeRRUI3oCYv0zy2cpIVKXZRXIv9ZYG/gk/GLbQjkTJD7uo3xyhKAXpx7OQQVvTpjZlTZ8Ehrfndxyh5xVpq2scbDn8+AKbV2f6GHrNlP89HXd/mM5FyTYEVGFIk0PD2es00qZnyiAVpWQWExLXCk4QC4OtpQAJvo5VFNCT15LkrSyvGXKgu93+kc6UGJTCeBnU8xYb/v+94JET1LS25s4CEY6Ng87vnlkUgoNIr2r/dhPBQsWofodKG54mvblqpsHGJhC3/5+/4QY6FuegknI8zmjTxlcydVfCuCjfGjSDtoVwhDdte5v7MnPwenb9PfUM3FREPy6x3sTkJuCu0sUntn4CgFhcc8AI3iFcjbcKT8N/AwmSqOzjDrSMJa8iNS34vbO/B8zITLU5tMrw8EglSj0HROv1FpC786dpJ+PfuDYXZ8gjHjgdYMh5rEJTSNOKppilGDFG6oYIKhIBgqQXft6nZTmjYZx9imfH7ctd/M/zvDjaZg4+SU7k554CKQ="
+    on_success: change
+    on_failure: change
