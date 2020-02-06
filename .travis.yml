@@ -1,16 +1,13 @@
-sudo: required
-dist: xenial
-
-os: 
-  - linux-ppc64le
-  
-services:
-- docker
-
+os: linux
+arch: ppc64le
+dist: bionic
 language: go
+sudo: required
+  
+#services:
+#- docker
 
-go:
-- 1.9.4
+go: 1.13.x
 
 before_script:
   - cd $GOPATH/src/github.com
