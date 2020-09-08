@@ -10,24 +10,34 @@ sudo: required
 go: 1.14.x
 
 install:
- - wget https://oplab9.parqtec.unicamp.br/pub/key/openpower-gpgkey-public.asc
- - sudo apt-key add openpower-gpgkey-public.asc
- - sudo add-apt-repository 'deb https://oplab9.parqtec.unicamp.br/pub/repository/debian/ ./'
- - sudo apt update
- - sudo apt install glide
+ #- wget https://oplab9.parqtec.unicamp.br/pub/key/openpower-gpgkey-public.asc
+ #- sudo apt-key add openpower-gpgkey-public.asc
+ #- sudo add-apt-repository 'deb https://oplab9.parqtec.unicamp.br/pub/repository/debian/ ./'
+ #- sudo apt update
+ #- sudo apt install glide
 
 before_script:
   - cd $GOPATH/src/github.com
   - mkdir kiali
   - cd kiali
-  - git clone https://github.com/kiali/kiali.git
-  - cd kiali 
-  - rm Makefile
-  - mv /home/travis/gopath/src/github.com/Unicamp-OpenPower/kiali-build/Makefile $GOPATH/src/github.com/kiali/kiali/Makefile
+  #- git clone https://github.com/kiali/kiali.git
+  - git clone git@github.com:kiali/kiali
+  - git clone git@github.com:kiali/kiali-operator kiali/operator
+  - git clone git@github.com:kiali/kiali-operator kiali/helm-charts
+  - export PATH=${PATH}:${GOPATH}/bin
+  #- cd kiali 
+  #- rm Makefile
+  #- mv /home/travis/gopath/src/github.com/Unicamp-OpenPower/kiali-build/Makefile $GOPATH/src/github.com/kiali/kiali/Makefile
+  
 
 script:
+  - cd $GOPATH/src/github.com/kiali/kiali
   - make build
   - make test
+  - pwd
+  - ls
+  - chmod +x kiali
+  - kiali
 
 notifications:
   slack:
