@@ -7,7 +7,18 @@ sudo: required
 #services:
 #- docker
 
-go: 1.13.x
+go: 1.14.x
+
+install:
+ - sudo add-apt-repository 'deb https://oplab9.parqtec.unicamp.br/pub/repository/debian/ ./'
+ - wget https://oplab9.parqtec.unicamp.br/pub/key/openpower-gpgkey-public.asc
+ - sudo apt-key add openpower-gpgkey-public.asc
+ - sudo apt update
+ - sudo apt install glide
+ #- wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/glide/glide-0.13.3
+ #- mv glide-0.13.3 glide
+ #- sudo chmod 755 glide
+ #- sudo mv glide /usr/bin/glide
 
 before_script:
   - cd $GOPATH/src/github.com
@@ -17,13 +28,6 @@ before_script:
   - cd kiali 
   - rm Makefile
   - mv /home/travis/gopath/src/github.com/Unicamp-OpenPower/kiali-build/Makefile $GOPATH/src/github.com/kiali/kiali/Makefile
-
- 
-install:   
- - wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/glide/glide-0.13.3
- - mv glide-0.13.3 glide
- - sudo chmod 755 glide
- - sudo mv glide /usr/bin/glide
 
 script:
   - make build
