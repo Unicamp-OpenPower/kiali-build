@@ -28,7 +28,7 @@ script:
   - make build
   - make test
   - cd $GOPATH/bin
-  - ./kiali version
+  - ./kiali -version
 
 notifications:
   slack:
